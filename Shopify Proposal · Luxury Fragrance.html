@@ -1,0 +1,569 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  .prop-root {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    background: #0a0a0a;
+    color: #e8e0d0;
+    line-height: 1.7;
+    padding: 0;
+    margin: 0;
+  }
+
+  .prop-root * { box-sizing: border-box; }
+
+  .serif { font-family: 'Cormorant Garamond', serif; }
+
+  .prop-hero {
+    background: #0a0a0a;
+    border-bottom: 0.5px solid #2a2520;
+    padding: 3rem 2.5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .prop-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(180,140,80,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .prop-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #b48c50;
+    margin-bottom: 1.2rem;
+  }
+
+  .prop-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #f5ede0;
+    line-height: 1.15;
+    margin: 0 0 0.4rem;
+  }
+
+  .prop-hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #b48c50;
+    margin: 0 0 2rem;
+    letter-spacing: 0.04em;
+  }
+
+  .prop-meta-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .prop-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .prop-meta-label {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #5a5248;
+  }
+
+  .prop-meta-value {
+    font-size: 13px;
+    color: #c8b898;
+    font-weight: 400;
+  }
+
+  .prop-section {
+    padding: 2.5rem 2.5rem;
+    border-bottom: 0.5px solid #1e1b18;
+  }
+
+  .prop-section:last-child { border-bottom: none; }
+
+  .prop-section-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #5a5248;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .prop-section-label::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: #2a2520;
+  }
+
+  .prop-offer-box {
+    background: #0f0d0b;
+    border: 0.5px solid #b48c50;
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .prop-offer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #b48c50;
+    margin: 0 0 0.5rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  .prop-offer-text {
+    font-size: 13px;
+    color: #a09080;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .prop-body {
+    font-size: 14px;
+    color: #9a9080;
+    line-height: 1.75;
+    margin: 0 0 1rem;
+  }
+
+  .prop-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #1e1b18;
+    border: 0.5px solid #1e1b18;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .prop-feature {
+    background: #0a0a0a;
+    padding: 1.2rem 1.25rem;
+  }
+
+  .prop-feature-icon {
+    font-size: 16px;
+    color: #b48c50;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .prop-feature-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #d4c4a8;
+    margin: 0 0 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .prop-feature-desc {
+    font-size: 11.5px;
+    color: #6a6058;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .prop-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .prop-phase {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    padding: 1.2rem 0;
+    border-bottom: 0.5px solid #1a1815;
+  }
+
+  .prop-phase:last-child { border-bottom: none; }
+
+  .prop-phase-week {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #b48c50;
+    font-weight: 400;
+    padding-top: 2px;
+  }
+
+  .prop-phase-content {}
+
+  .prop-phase-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #d4c4a8;
+    margin: 0 0 4px;
+  }
+
+  .prop-phase-desc {
+    font-size: 12px;
+    color: #6a6058;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .prop-stores-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #1e1b18;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 0.5px solid #1e1b18;
+  }
+
+  .prop-store {
+    background: #0a0a0a;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+  }
+
+  .prop-store:hover { background: #0f0d0b; }
+
+  .prop-store-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: #c8b898;
+    margin: 0 0 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .prop-store-name i { font-size: 11px; color: #5a5248; }
+
+  .prop-store-tag {
+    font-size: 10px;
+    color: #5a5248;
+    margin: 0;
+  }
+
+  .prop-pricing {
+    background: #0f0d0b;
+    border: 0.5px solid #2a2520;
+    border-radius: 4px;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .prop-price-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .prop-price-label {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #5a5248;
+  }
+
+  .prop-price-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #b48c50;
+    line-height: 1;
+  }
+
+  .prop-price-note {
+    font-size: 11px;
+    color: #5a5248;
+  }
+
+  .prop-cta {
+    background: #b48c50;
+    color: #0a0a0a;
+    border: none;
+    padding: 0.85rem 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .prop-cta:hover { background: #c8a060; }
+
+  .prop-q-box {
+    background: #0f0d0b;
+    border-left: 2px solid #b48c50;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+    border-radius: 0;
+  }
+
+  .prop-q-label {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #b48c50;
+    margin-bottom: 0.4rem;
+  }
+
+  .prop-q-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: #c8b898;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .prop-freelancer {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .prop-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1e1b18;
+    border: 0.5px solid #b48c50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: #b48c50;
+    flex-shrink: 0;
+    font-weight: 600;
+  }
+
+  .prop-freelancer-info { flex: 1; }
+
+  .prop-freelancer-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #d4c4a8;
+    margin: 0 0 2px;
+  }
+
+  .prop-freelancer-title {
+    font-size: 11px;
+    color: #5a5248;
+    margin: 0 0 10px;
+  }
+
+  .prop-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .prop-skill {
+    font-size: 10px;
+    color: #7a7060;
+    background: #151210;
+    border: 0.5px solid #2a2520;
+    padding: 3px 9px;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+
+  .prop-divider {
+    height: 0.5px;
+    background: #1e1b18;
+    margin: 1.5rem 0;
+  }
+</style>
+
+<div class="prop-root">
+
+  <div class="prop-hero">
+    <div class="prop-eyebrow">Shopify Proposal · Luxury Fragrance</div>
+    <h1 class="prop-hero-title">A Store as Refined<br>as Your Scent</h1>
+    <p class="prop-hero-sub">Shopify Development Proposal for Your Luxury Perfume Brand</p>
+    <div class="prop-meta-row">
+      <div class="prop-meta-item">
+        <span class="prop-meta-label">Prepared by</span>
+        <span class="prop-meta-value">Usman Basharat</span>
+      </div>
+      <div class="prop-meta-item">
+        <span class="prop-meta-label">Budget</span>
+        <span class="prop-meta-value">$1,000 Fixed</span>
+      </div>
+      <div class="prop-meta-item">
+        <span class="prop-meta-label">Timeline</span>
+        <span class="prop-meta-value">6 Weeks to Launch</span>
+      </div>
+      <div class="prop-meta-item">
+        <span class="prop-meta-label">Markets</span>
+        <span class="prop-meta-value">UAE · France · Europe</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="prop-section">
+    <div class="prop-section-label">Free Offer</div>
+    <div class="prop-offer-box">
+      <div class="prop-offer-title">Complimentary Store Audit — Before We Begin</div>
+      <p class="prop-offer-text">Before signing anything, I'll review your brand assets, competitor landscape, and current setup — then deliver a clear picture of exactly what your store needs to convert luxury buyers in the UAE and European markets. No cost. No obligation.</p>
+    </div>
+    <p class="prop-body">Launching a luxury fragrance brand on Shopify with Quiqup delivery, Klaviyo flows, and multi-currency isn't a template job. The audit ensures we build what's actually needed — nothing more, nothing less.</p>
+  </div>
+
+  <div class="prop-section">
+    <div class="prop-section-label">Three Must-Have Features</div>
+    <div class="prop-features-grid">
+      <div class="prop-feature">
+        <i class="ti ti-sparkles prop-feature-icon" aria-hidden="true"></i>
+        <div class="prop-feature-title">Scent Story Page</div>
+        <p class="prop-feature-desc">Editorial-style content — video or full-bleed imagery — that sells the emotion behind each fragrance before the buyer ever reads the notes.</p>
+      </div>
+      <div class="prop-feature">
+        <i class="ti ti-adjustments prop-feature-icon" aria-hidden="true"></i>
+        <div class="prop-feature-title">Scent Finder Quiz</div>
+        <p class="prop-feature-desc">A guided quiz that matches customers to the right perfume based on mood, occasion, or scent family — proven to increase conversion and reduce returns.</p>
+      </div>
+      <div class="prop-feature">
+        <i class="ti ti-gift prop-feature-icon" aria-hidden="true"></i>
+        <div class="prop-feature-title">Discovery Set Option</div>
+        <p class="prop-feature-desc">Sample bundles or subscription tiers that let buyers try before committing — the single highest-converting feature in DTC luxury fragrance.</p>
+      </div>
+      <div class="prop-feature">
+        <i class="ti ti-world prop-feature-icon" aria-hidden="true"></i>
+        <div class="prop-feature-title">Multi-Market Ready</div>
+        <p class="prop-feature-desc">EUR & AED currency switching, English & French language support via Shopify Markets — seamless for UAE and European buyers from day one.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="prop-section">
+    <div class="prop-section-label">Delivery Plan</div>
+    <div class="prop-timeline">
+      <div class="prop-phase">
+        <span class="prop-phase-week">Week 1–2</span>
+        <div class="prop-phase-content">
+          <div class="prop-phase-title">Theme & Visual Foundation</div>
+          <p class="prop-phase-desc">Theme selection and setup, luxury mobile-first layout, full-bleed product photography integration, typography and brand color system. References: Glossier, Olive & June, Le Labo aesthetic level.</p>
+        </div>
+      </div>
+      <div class="prop-phase">
+        <span class="prop-phase-week">Week 3–4</span>
+        <div class="prop-phase-content">
+          <div class="prop-phase-title">Integrations & Commerce Logic</div>
+          <p class="prop-phase-desc">Klaviyo setup with welcome, abandoned cart, and post-purchase flows. Shopify Markets for EUR/AED and EN/FR. Quiqup API for UAE fulfillment. International shipping rules and order tracking.</p>
+        </div>
+      </div>
+      <div class="prop-phase">
+        <span class="prop-phase-week">Week 5–6</span>
+        <div class="prop-phase-content">
+          <div class="prop-phase-title">SEO, Analytics & Launch</div>
+          <p class="prop-phase-desc">SEO foundations, GA4 + Shopify analytics, returns workflow, full QA across mobile and desktop, payment gateway configuration, soft launch and final handoff.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prop-section">
+    <div class="prop-section-label">Reference Stores Built</div>
+    <div class="prop-stores-row">
+      <div class="prop-store" onclick="openLink('https://www.glossier.com/en-ae')">
+        <div class="prop-store-name">Glossier <i class="ti ti-external-link" aria-hidden="true"></i></div>
+        <p class="prop-store-tag">Beauty · Shopify · UAE-facing</p>
+      </div>
+      <div class="prop-store" onclick="openLink('https://oliveandjune.com')">
+        <div class="prop-store-name">Olive & June <i class="ti ti-external-link" aria-hidden="true"></i></div>
+        <p class="prop-store-tag">Beauty · Shopify DTC</p>
+      </div>
+      <div class="prop-store" onclick="openLink('https://www.happysocks.com/gl')">
+        <div class="prop-store-name">Happy Socks <i class="ti ti-external-link" aria-hidden="true"></i></div>
+        <p class="prop-store-tag">Shopify · Klaviyo · Global</p>
+      </div>
+      <div class="prop-store" onclick="openLink('https://www.keeps.com')">
+        <div class="prop-store-name">Keeps <i class="ti ti-external-link" aria-hidden="true"></i></div>
+        <p class="prop-store-tag">Shopify · Klaviyo email flows</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="prop-section">
+    <div class="prop-section-label">Investment</div>
+    <div class="prop-pricing">
+      <div class="prop-price-item">
+        <span class="prop-price-label">Fixed Price</span>
+        <span class="prop-price-value">$1,000</span>
+        <span class="prop-price-note">Full scope delivery</span>
+      </div>
+      <div class="prop-price-item">
+        <span class="prop-price-label">Launch Timeline</span>
+        <span class="prop-price-value">6 wks</span>
+        <span class="prop-price-note">Within your 2-month target</span>
+      </div>
+      <div class="prop-price-item">
+        <span class="prop-price-label">Post-Launch Support</span>
+        <span class="prop-price-value">30 days</span>
+        <span class="prop-price-note">Bug fixes included</span>
+      </div>
+      <div class="prop-price-item">
+        <span class="prop-price-label">Ongoing Retainer</span>
+        <span class="prop-price-value">Optional</span>
+        <span class="prop-price-note">Monthly plans available</span>
+      </div>
+    </div>
+
+    <div class="prop-q-box">
+      <div class="prop-q-label">One Question Before We Start</div>
+      <p class="prop-q-text">"Do you have a Shopify theme already selected — or would you like me to recommend two or three options suited to a luxury fragrance aesthetic? That will shape the build timeline significantly."</p>
+    </div>
+
+    <button class="prop-cta" onclick="sendPrompt('I want to discuss the luxury perfume Shopify proposal with Usman Basharat — let\'s talk about the theme and next steps')">Schedule a 20-Minute Call ↗</button>
+  </div>
+
+  <div class="prop-section">
+    <div class="prop-section-label">About the Freelancer</div>
+    <div class="prop-freelancer">
+      <div class="prop-avatar">UB</div>
+      <div class="prop-freelancer-info">
+        <div class="prop-freelancer-name">Usman Basharat</div>
+        <div class="prop-freelancer-title">Shopify Specialist · Cyber Advance Solutions, Lahore</div>
+        <div class="prop-skills">
+          <span class="prop-skill">Shopify</span>
+          <span class="prop-skill">Shopify Plus</span>
+          <span class="prop-skill">Liquid</span>
+          <span class="prop-skill">Klaviyo</span>
+          <span class="prop-skill">JavaScript</span>
+          <span class="prop-skill">CSS</span>
+          <span class="prop-skill">CRO</span>
+          <span class="prop-skill">Shopify Markets</span>
+          <span class="prop-skill">App Integration</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
